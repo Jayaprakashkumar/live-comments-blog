@@ -18,7 +18,7 @@ const Blog = (props) => {
     const sortTheData = event => {
         const value = event.target.value;
         if (value === "date") {
-            socketData.sort((a, b) => (new Date(a[value]) > new Date(b[value])) ? 1 : (new Date((b[value]) > new Date(a[value])) ? -1 : 0));
+            socketData.sort((a, b) => (new Date(a[value]) < new Date(b[value])) ? 1 : (new Date((b[value]) < new Date(a[value])) ? -1 : 0));
         } else {
             socketData.sort((a, b) => (a[value] > b[value]) ? 1 : ((b[value] > a[value]) ? -1 : 0));
         }
