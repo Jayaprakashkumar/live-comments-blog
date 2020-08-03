@@ -1,4 +1,4 @@
-# *Blue technologies | Task*
+# *Comment-Blog*
 
 ## Directory Structure
     .   
@@ -60,11 +60,3 @@ Find the screenshot below.
 
 ![sort comments](https://github.com/Jayaprakashkumar/live-comments-blog/blob/master/screenshots/sort.png)
 
-
-## Git Commit Tree
-
-1. Created a sample git commit tree which depicts creating new branch, commit and merge. I have used GitGraph.js library.
-
-Find the screenshot below.
-
-![menu bar](https://github.com/Jayaprakashkumar/blue_technology/blob/master/screenshots/commit-tree.PNG)
