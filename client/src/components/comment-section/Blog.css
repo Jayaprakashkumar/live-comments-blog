@@ -1,0 +1,84 @@
+.blog-wrapper{
+    max-height: 600px;
+    overflow-y: auto;
+}
+.box-wrapper{
+    overflow: hidden;
+    border: 1px solid cadetblue;
+    border-radius: 28px;
+    padding: 25px 10px 10px 10px;
+    margin-bottom: 10px;
+}
+.blog-box:nth-child(odd) .box-wrapper{
+    background-color: cadetblue;
+    color: #fff;
+}
+.blog-box:nth-child(odd) .box-wrapper a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.box-wrapper a{
+    color: #17a2b8;
+}
+
+label:after{
+content: "*";
+color: #c30037;
+}
+
+.box-wrapper a:hover{
+    text-decoration: underline;
+    color:#138496;
+
+}
+.blog-box:last-child{
+    border: none;
+}
+
+.user-box{
+    border-left: 1px solid #cdcdcd;
+}
+
+.underline {
+    letter-spacing: 1.1px;
+    position: relative;
+    display: inline-block;
+    border-bottom: solid 2px #57b9a8;
+  }
+  
+  .underline:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #57b9a8;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 100% 50%;
+    padding-top: 5px;
+  }
+
+
+/* Addition styling  */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media screen and (max-width:575px){
+
+    .user-box{
+        border-left: none;
+    }
+
+}
