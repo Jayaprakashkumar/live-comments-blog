@@ -3,11 +3,12 @@ import io from "socket.io-client";
 import './Blog.css'
 
 const endPoint = "http://127.0.0.1:5000/";
+const options = ["name", "email", "date"]
 
 const Blog = (props) => {
     const [response, setResponse] = useState([]);
     let socketData = response.length > 0 ? response : props.data;
-    console.log("call socket", socketData);
+    console.log(response);
     useEffect(() => {
         const socket = io(endPoint);
         socket.on("connected", (data) => {
@@ -15,14 +16,20 @@ const Blog = (props) => {
         });
     }, []);
 
-    const sortTheData = event => {
+    const sortTheData = (event) => {
         const value = event.target.value;
         if (value === "date") {
             socketData.sort((a, b) => (new Date(a[value]) < new Date(b[value])) ? 1 : (new Date((b[value]) < new Date(a[value])) ? -1 : 0));
         } else {
+            let email = []
+            socketData.forEach(element => {
+                email.push(element[value]);
+            });
+            console.log(email.sort())
+
             socketData.sort((a, b) => (a[value] > b[value]) ? 1 : ((b[value] > a[value]) ? -1 : 0));
         }
-        setResponse(socketData)
+        setResponse([...socketData])
     };
 
     return (
@@ -32,9 +39,7 @@ const Blog = (props) => {
                 <div className="form-group float-right w-40">
                     <select className="form-control" onChange={sortTheData}>
                         <option value="">sort By</option>
-                        <option value="name">Name</option>
-                        <option value="email">Email</option>
-                        <option value="date">Date</option>
+                        {options.map(ele => { return <option value={ele}>{ele}</option> })}
                     </select>
                 </div>
             </div>

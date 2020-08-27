@@ -101,7 +101,7 @@ class CommentForm extends Component {
         const { errors, blogData } = this.state;
         return (
             <div className=''>
-                <Blog data={blogData}></Blog>
+                <Blog data={blogData} backup={blogData}></Blog>
                 <h5 className="underline">Leave a Comment</h5>
                 <form onSubmit={this.handleSubmit} noValidate>
                     <div className='form-group'>
